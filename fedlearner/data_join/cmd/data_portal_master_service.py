@@ -55,6 +55,7 @@ if __name__ == "__main__":
                         help='Check that a _SUCCESS file exists before '
                              'processing files in a subfolder')
     args = parser.parse_args()
+    print(args)
 
     db_database, db_addr, db_username, db_password, db_base_dir = \
         common.get_kvstore_config(args.kvstore_type)
