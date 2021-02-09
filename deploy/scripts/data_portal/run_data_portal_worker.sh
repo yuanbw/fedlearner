@@ -31,6 +31,7 @@ read_batch_size=$(normalize_env_to_args "--read_batch_size" $READ_BATCH_SIZE)
 output_builder=$(normalize_env_to_args "--output_builder" $OUTPUT_DATA_FORMAT)
 builder_compressed_type=$(normalize_env_to_args "--builder_compressed_type" $BUILDER_COMPRESSED_TYPE)
 batch_size=$(normalize_env_to_args "--batch_size" $BATCH_SIZE)
+export KVSTORE_TYPE=nfs
 kvstore_type=$(normalize_env_to_args '--kvstore_type' $KVSTORE_TYPE)
 memory_limit_ratio=$(normalize_env_to_args '--memory_limit_ratio' $MEMORY_LIMIT_RATIO)
 optional_fields=$(normalize_env_to_args '--optional_fields' $OPTIONAL_FIELDS)

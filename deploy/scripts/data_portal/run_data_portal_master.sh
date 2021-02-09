@@ -21,6 +21,7 @@ source /app/deploy/scripts/hdfs_common.sh || true
 source /app/deploy/scripts/env_to_args.sh
 
 input_file_wildcard=$(normalize_env_to_args "--input_file_wildcard" $FILE_WILDCARD)
+export KVSTORE_TYPE=nfs
 kvstore_type=$(normalize_env_to_args '--kvstore_type' $KVSTORE_TYPE)
 echo "===KVStore: ", $KVSTORE_TYPE
 
