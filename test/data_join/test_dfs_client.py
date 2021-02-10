@@ -40,6 +40,9 @@ class TestDFSClient(unittest.TestCase):
         self.assertTrue(client.cas('fl_key1', 'fl_value', 'fl_value1'))
         self.assertEqual(client.get_data('fl_key1'), b'fl_value1')
 
+        self.assertTrue(client.cas('fl_key2', None, 'fl_value2'))
+        self.assertEqual(client.get_data('fl_key2'), b'fl_value2')
+
         client.set_data('fl_key/a', '1')
         client.set_data('fl_key/b', '2')
         client.set_data('fl_key/c', '3')

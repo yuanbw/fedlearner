@@ -72,7 +72,9 @@ class DFSClient(object):
             return False
 
     def cas(self, key, old_data, new_data):
-        org_data = self.get_data(key).decode('utf-8')
+        org_data = self.get_data(key)
+        if isinstance(org_data, bytes):
+            org_data = org_data.decode('utf-8')
         if isinstance(old_data, bytes):
             old_data = old_data.decode('utf-8')
         if org_data != old_data:
